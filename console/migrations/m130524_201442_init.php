@@ -24,6 +24,13 @@ class m130524_201442_init extends Migration
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
         ], $tableOptions);
+
+        $this->createTable('books', [
+            'id' => $this->primaryKey(),
+            'author_id' => $this->integer(),
+            'description' => $this->text(),
+            'image' => 'LONGBLOB NOT NULL',
+        ], $tableOptions);
     }
 
     public function down()
